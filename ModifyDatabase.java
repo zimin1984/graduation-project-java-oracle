@@ -17,7 +17,7 @@ public class ModifyDatabase extends HttpServlet {
     PrintWriter out = response.getWriter();
     out.println("<html><body>");
     if(userName==null){
-      out.println("<script language=\"JavaScript\">window.alert('Сначала следует пройти аутентификацию.');");
+      out.println("<script language=\"JavaScript\">window.alert('РЎРЅР°С‡Р°Р»Р° СЃР»РµРґСѓРµС‚ РїСЂРѕР№С‚Рё Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЋ.');");
       out.println("top.location='..';</script>");
     }   
     else{
@@ -40,7 +40,7 @@ public class ModifyDatabase extends HttpServlet {
           while(rs.next()) {                                        
             if(rs.getString("enabled_department").equals("all")==false){
               if(rs.getString("enabled_department").equals(selectedDepartment)==false){
-                out.println("<script>window.alert('Вам не разрешено добавлять работы в выбранное подразделение. Выберите разрешенное подразделение.');"+
+                out.println("<script>window.alert('Р’Р°Рј РЅРµ СЂР°Р·СЂРµС€РµРЅРѕ РґРѕР±Р°РІР»СЏС‚СЊ СЂР°Р±РѕС‚С‹ РІ РІС‹Р±СЂР°РЅРЅРѕРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ. Р’С‹Р±РµСЂРёС‚Рµ СЂР°Р·СЂРµС€РµРЅРЅРѕРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ.');"+
                    "history.back(); </script>");                
                 isEnabled=false;
               }             
@@ -95,7 +95,7 @@ public class ModifyDatabase extends HttpServlet {
            st.executeUpdate("delete from temp_tasks");   
          }
         } catch( SQLException ex){
-           out.println("<H1 ALIGN=CENTER>Внутренняя ошибка сервера: нет доступа к базе данных.</H1>\n\n"+ rsc.convertString(ex.toString()));
+           out.println("<H1 ALIGN=CENTER>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</H1>\n\n"+ rsc.convertString(ex.toString()));
         } 
         try {      
            File f=new File("UsersWorkspace",nextWorkId+".htm");
@@ -105,7 +105,7 @@ public class ModifyDatabase extends HttpServlet {
            output.flush(); 
         } 
         catch(Exception e) {
-          out.println("<h1 align=center>Внутренняя ошибка приложения: нет доступа к файлам с данными.</h1>\n\n"+ e.toString());
+          out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° РїСЂРёР»РѕР¶РµРЅРёСЏ: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє С„Р°Р№Р»Р°Рј СЃ РґР°РЅРЅС‹РјРё.</h1>\n\n"+ e.toString());
         }        
          out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_works';</script>");
         
@@ -144,7 +144,7 @@ public class ModifyDatabase extends HttpServlet {
          out.println("<script>window.close();</script>");
        }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
       }
     }
     
@@ -207,7 +207,7 @@ public class ModifyDatabase extends HttpServlet {
          out.println("<script>window.close();</script>");
        }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }
     
@@ -260,7 +260,7 @@ public class ModifyDatabase extends HttpServlet {
          out.println("<script>window.close();</script>");
        }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }
     
@@ -349,13 +349,13 @@ public class ModifyDatabase extends HttpServlet {
           output.flush(); 
         } 
         catch(Exception e) {
-          out.println("<h1>Внутренняя ошибка приложения: нет доступа к файлам с данными.</h1>\n\n"+ e.toString());
+          out.println("<h1>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° РїСЂРёР»РѕР¶РµРЅРёСЏ: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє С„Р°Р№Р»Р°Рј СЃ РґР°РЅРЅС‹РјРё.</h1>\n\n"+ e.toString());
         }        
                 
         out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_works';</script>");
       }
       catch(SQLException ex){ 
-        out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+        out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
       }
       out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_works';</script>");
     }
@@ -379,7 +379,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_users';</script>");
        }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }   
      
@@ -409,7 +409,7 @@ public class ModifyDatabase extends HttpServlet {
         out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_users';</script>");
         }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }
      
@@ -427,7 +427,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_places';</script>");
        }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }   
       
@@ -442,7 +442,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_departments';</script>");
        }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }   
      
@@ -464,7 +464,7 @@ public class ModifyDatabase extends HttpServlet {
         out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_places';</script>");
         }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }
      
@@ -480,13 +480,13 @@ public class ModifyDatabase extends HttpServlet {
         out.println("<script>window.location='../servlet/WebPagesGenerator?actionType=correct_departments';</script>");
         }
        catch(SQLException ex){ 
-         out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+         out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
        }
      }
      
      else if(actionType.equals("save_modified_worker")==true){
        if(userName.equalsIgnoreCase("administrator")==false){
-         out.println("<h1 align=center>Ошибка: у Вас нет права изменять НСИ.</h1>");
+         out.println("<h1 align=center>РћС€РёР±РєР°: Сѓ Р’Р°СЃ РЅРµС‚ РїСЂР°РІР° РёР·РјРµРЅСЏС‚СЊ РќРЎР.</h1>");
        }
        else{         
          String workerId = request.getParameter("worker_id");
@@ -522,14 +522,14 @@ public class ModifyDatabase extends HttpServlet {
            out.println("<script language=\"JavaScript\">window.location='../servlet/WebPagesGenerator?actionType=correct_workers';</script>");
          }
          catch(SQLException ex){ 
-           out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+           out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
          }
        }
       } 
       
       else if(actionType.equals("add_worker")==true){
         if(userName.equalsIgnoreCase("administrator")==false){
-          out.println("<h1 align=center>Ошибка: у Вас нет права изменять НСИ.</h1>");
+          out.println("<h1 align=center>РћС€РёР±РєР°: Сѓ Р’Р°СЃ РЅРµС‚ РїСЂР°РІР° РёР·РјРµРЅСЏС‚СЊ РќРЎР.</h1>");
         }
         else{
           String fio = request.getParameter("fio");  
@@ -558,7 +558,7 @@ public class ModifyDatabase extends HttpServlet {
             out.println("<script language=\"JavaScript\">window.location='../servlet/WebPagesGenerator?actionType=correct_workers';</script>");
           }
           catch(SQLException ex){ 
-            out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+            out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
           }
         }
       }
@@ -579,7 +579,7 @@ public class ModifyDatabase extends HttpServlet {
     PrintWriter out = response.getWriter();
     out.println("<html><body>");
     if(userName==null){
-      out.println("<script language=\"JavaScript\">window.alert('Сначала следует пройти аутентификацию.');");
+      out.println("<script language=\"JavaScript\">window.alert('РЎРЅР°С‡Р°Р»Р° СЃР»РµРґСѓРµС‚ РїСЂРѕР№С‚Рё Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЋ.');");
       out.println("top.location='..';</script>");
     }   
     else{
@@ -597,14 +597,14 @@ public class ModifyDatabase extends HttpServlet {
              while(rs2.next()) {                                        
                if(rs2.getString("enabled_department").equals("all")==false){
                   if(rs2.getString("enabled_department").equals(selectedDepartment)==false){
-                    out.println("<script>window.alert('Вам не разрешено удалять работы в выбранном подразделении. Выберите разрешенное подразделение.');"+
+                    out.println("<script>window.alert('Р’Р°Рј РЅРµ СЂР°Р·СЂРµС€РµРЅРѕ СѓРґР°Р»СЏС‚СЊ СЂР°Р±РѕС‚С‹ РІ РІС‹Р±СЂР°РЅРЅРѕРј РїРѕРґСЂР°Р·РґРµР»РµРЅРёРё. Р’С‹Р±РµСЂРёС‚Рµ СЂР°Р·СЂРµС€РµРЅРЅРѕРµ РїРѕРґСЂР°Р·РґРµР»РµРЅРёРµ.');"+
                         "history.back(); </script>");                
                     isEnabled=false;
                     break;
                   }
                   if(rs2.getString("privilege").equals("1")==true){
                       if(rs.getString("vladelets").equals(userName)==false){
-                         out.println("<script>window.alert('Вам не разрешено удалять выбранную работу, т.к. Вы не являетесь ее владельцем.');"+
+                         out.println("<script>window.alert('Р’Р°Рј РЅРµ СЂР°Р·СЂРµС€РµРЅРѕ СѓРґР°Р»СЏС‚СЊ РІС‹Р±СЂР°РЅРЅСѓСЋ СЂР°Р±РѕС‚Сѓ, С‚.Рє. Р’С‹ РЅРµ СЏРІР»СЏРµС‚РµСЃСЊ РµРµ РІР»Р°РґРµР»СЊС†РµРј.');"+
                              "history.back(); </script>");                
                          isEnabled=false;
                       }
@@ -619,7 +619,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.close();</script>");
         }
         catch(SQLException ex){ 
-          out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+          out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
         }       
       }
       
@@ -631,7 +631,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.close();</script>");
         }
         catch(SQLException ex){ 
-          out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+          out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
         }       
       }
        
@@ -643,7 +643,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.close();</script>");
         }
         catch(SQLException ex){ 
-          out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+          out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
         }       
       }
       
@@ -655,7 +655,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.close();</script>");
         }
         catch(SQLException ex){ 
-          out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+          out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
         }       
       }
       
@@ -666,7 +666,7 @@ public class ModifyDatabase extends HttpServlet {
           out.println("<script>window.close();</script>");
         }
         catch(SQLException ex){ 
-          out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+          out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
         }     
       }   
       
@@ -694,7 +694,7 @@ public class ModifyDatabase extends HttpServlet {
            }  
             File f=new File("UsersWorkspace",workId+".htm");
             if(f==null) 
-              out.println("<h1>Внутренняя ошибка приложения: нет доступа к файлу с данными о задачах.</h1>");
+              out.println("<h1>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° РїСЂРёР»РѕР¶РµРЅРёСЏ: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє С„Р°Р№Р»Сѓ СЃ РґР°РЅРЅС‹РјРё Рѕ Р·Р°РґР°С‡Р°С….</h1>");
           
             BufferedReader inStream=new BufferedReader(new FileReader(f));
             String theString=new String();
@@ -718,14 +718,14 @@ public class ModifyDatabase extends HttpServlet {
          out.println("<script>window.close();</script>");
        }    
        catch( SQLException ex){
-         out.println("<H1>Внутренняя ошибка сервера: нет доступа к базе данных.</H1>\n\n"+ ex.toString());
+         out.println("<H1>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</H1>\n\n"+ ex.toString());
        }   
      }
      
      else if(actionType.equals("delete_worker")==true){
        String workerId = request.getParameter("worker_id");  
        if(userName.equalsIgnoreCase("administrator")==false){
-         out.println("<h1 align=center>Ошибка: у Вас нет права изменять НСИ.</h1>");
+         out.println("<h1 align=center>РћС€РёР±РєР°: Сѓ Р’Р°СЃ РЅРµС‚ РїСЂР°РІР° РёР·РјРµРЅСЏС‚СЊ РќРЎР.</h1>");
        }
        else{
          try {     
@@ -734,7 +734,7 @@ public class ModifyDatabase extends HttpServlet {
            out.println("<script language=\"JavaScript\">window.location='../servlet/WebPagesGenerator?actionType=correct_workers';</script>");
          }
          catch(SQLException ex){ 
-           out.println("<h1 align=center>Внутренняя ошибка сервера: нет доступа к базе данных.</h1>\n\n"+ ex.toString());
+           out.println("<h1 align=center>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</h1>\n\n"+ ex.toString());
          }
        }
      }

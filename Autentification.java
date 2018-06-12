@@ -38,7 +38,7 @@ public class Autentification extends HttpServlet {
                   String adminPassword=rs.getString("password");
                   if(adminPassword.equals("no password")==false) {
                      if(adminPassword.equals(password)==false) {                     
-                       out.println("<script language=\"JavaScript\">window.alert('Неправильный пароль.');");
+                       out.println("<script language=\"JavaScript\">window.alert('РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ.');");
                        out.println("window.location='..';</script>");
                        break;
                      }
@@ -59,12 +59,12 @@ public class Autentification extends HttpServlet {
                   session.putValue("privilege",rs.getString("privilege"));
                   out.println("<script language=\"JavaScript\">window.location='../html/Frames.htm';</script>");
                }             
-               out.println("<script language=\"JavaScript\">window.alert('Неправильное имя пользователя или пароль.');");
+               out.println("<script language=\"JavaScript\">window.alert('РќРµРїСЂР°РІРёР»СЊРЅРѕРµ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РёР»Рё РїР°СЂРѕР»СЊ.');");
                out.println("window.location='..';</script>");
             }
     }    
     catch( SQLException ex){
-      out.println("<H1 ALIGN=CENTER>Внутренняя ошибка сервера: нет доступа к базе данных.</H1>\n\n"+ ex.toString());
+      out.println("<H1 ALIGN=CENTER>Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ РѕС€РёР±РєР° СЃРµСЂРІРµСЂР°: РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С….</H1>\n\n"+ ex.toString());
     }
     out.println("</BODY></HTML>");
     out.close();
